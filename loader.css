@@ -1,0 +1,125 @@
+/* ═══════════════════════════════════
+   loader.css — Loading Screen Styles
+═══════════════════════════════════ */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--brown-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Cup */
+.loader-cup {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.cup-body {
+  width: 60px;
+  height: 50px;
+  background: var(--caramel);
+  border-radius: 4px 4px 18px 18px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  overflow: hidden;
+}
+
+.cup-handle {
+  width: 20px;
+  height: 28px;
+  border: 4px solid var(--caramel);
+  border-left: none;
+  border-radius: 0 14px 14px 0;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.cup-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: var(--brown-mid);
+  border-radius: 0 0 14px 14px;
+  animation: fillCup 2s ease-in-out infinite;
+}
+
+@keyframes fillCup {
+  0%, 100% { height: 60%; }
+  50%       { height: 82%; }
+}
+
+/* Steam */
+.steam {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.steam span {
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(to top, var(--caramel-light), transparent);
+  border-radius: 2px;
+  animation: steamRise 1.5s ease-in-out infinite;
+}
+.steam span:nth-child(2) { animation-delay: 0.3s; }
+.steam span:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes steamRise {
+  0%, 100% { transform: scaleY(1) translateY(0);    opacity: 0.8; }
+  50%       { transform: scaleY(1.4) translateY(-6px); opacity: 0.3; }
+}
+
+/* Text & bar */
+.loader-text {
+  color: var(--cream);
+  font-family: var(--font-script);
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+.loader-sub {
+  color: var(--brown-light);
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.loader-bar-wrap {
+  width: 200px;
+  height: 2px;
+  background: var(--brown-mid);
+  border-radius: 2px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+.loader-bar {
+  height: 100%;
+  background: var(--caramel);
+  animation: loadBar 2.3s ease forwards;
+}
+@keyframes loadBar {
+  from { width: 0; }
+  to   { width: 100%; }
+}

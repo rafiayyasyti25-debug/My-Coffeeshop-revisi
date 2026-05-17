@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════
+   menu.css — Menu Section Styles
+═══════════════════════════════════ */
+
+#menu {
+  padding: 100px 5%;
+  background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+}
+
+/* Filter Tabs */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.menu-tab {
+  background: transparent;
+  border: 2px solid var(--caramel);
+  color: var(--brown-mid);
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.menu-tab:hover,
+.menu-tab.active {
+  background: var(--caramel);
+  color: white;
+  box-shadow: 0 4px 16px rgba(196,136,61,0.3);
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Menu Card */
+.menu-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardFadeIn 0.45s ease both;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px var(--shadow-strong);
+}
+
+/* Card Image Area */
+.menu-card-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--cream), var(--caramel-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.menu-card-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), transparent 70%);
+}
+
+.menu-card-img span {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-card-img span {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+/* Badge */
+.menu-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--brown-dark);
+  color: var(--caramel-light);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Card Body */
+.menu-card-body {
+  padding: 20px;
+}
+
+.menu-card-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.menu-card-desc {
+  font-size: 13px;
+  color: var(--brown-light);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+/* Card Footer */
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--caramel);
+  font-weight: 600;
+}
+
+.add-btn {
+  background: var(--brown-dark);
+  color: var(--cream);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+  line-height: 1;
+}
+
+.add-btn:hover {
+  background: var(--caramel);
+  transform: scale(1.12) rotate(90deg);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .menu-card-img { height: 120px; font-size: 48px; }
+  .menu-card-body { padding: 14px; }
+  .menu-card-name { font-size: 15px; }
+  .menu-price { font-size: 17px; }
+  .add-btn { width: 34px; height: 34px; font-size: 18px; }
+}
+
+@media (max-width: 380px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}

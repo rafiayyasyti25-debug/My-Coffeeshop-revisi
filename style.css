@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════
+   KOPI RUMAHAN — Main Stylesheet
+   File: css/style.css
+   Imports: variables, reset, typography, layout
+═══════════════════════════════════════════ */
+
+/* ─── CSS VARIABLES ─── */
+:root {
+  --cream: #F5ECD7;
+  --warm-white: #FDF8F0;
+  --brown-dark: #2C1A0E;
+  --brown-mid: #5C3D2E;
+  --brown-light: #8B5E3C;
+  --caramel: #C4883D;
+  --caramel-light: #E0A84F;
+  --sage: #7A8C6E;
+  --sage-light: #B5C4A8;
+  --shadow: rgba(44,26,14,0.15);
+  --shadow-strong: rgba(44,26,14,0.35);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --transition: 0.25s ease;
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--warm-white);
+  color: var(--brown-dark);
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+.script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ─── SECTION SHARED ─── */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--caramel);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  color: var(--brown-dark);
+}
+
+.section-subtitle {
+  color: var(--brown-light);
+  font-size: 16px;
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+/* ─── BUTTONS ─── */
+.btn-primary {
+  display: inline-block;
+  background: var(--brown-dark);
+  color: var(--cream);
+  border: none;
+  padding: 16px 36px;
+  border-radius: 32px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover {
+  background: var(--caramel);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-strong);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--brown-dark);
+  border: 2px solid var(--brown-dark);
+  padding: 14px 32px;
+  border-radius: 32px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all var(--transition);
+}
+.btn-outline:hover {
+  background: var(--brown-dark);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── TOAST NOTIFICATION ─── */
+#toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--brown-dark);
+  color: var(--cream);
+  padding: 14px 24px;
+  border-radius: 32px;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 9000;
+  opacity: 0;
+  transition: all 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 8px 24px var(--shadow-strong);
+}
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ─── RESPONSIVE HELPERS ─── */
+@media (max-width: 600px) {
+  .hide-mobile { display: none !important; }
+}
+@media (min-width: 601px) {
+  .hide-desktop { display: none !important; }
+}

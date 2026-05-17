@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kopi Rumahan — Kedai kopi dengan suasana homey dan tenang di Indramayu, Jawa Barat.">
+  <title>Kopi Rumahan — A Place to Breathe</title>
+
+  <!-- ── Google Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+  <!-- ── CSS Files ── -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/payment.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     LOADING SCREEN
+══════════════════════════════════ -->
+<div id="loader" role="status" aria-label="Memuat halaman...">
+  <div class="loader-cup">
+    <div class="steam">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="cup-body">
+      <div class="cup-liquid"></div>
+    </div>
+    <div class="cup-handle"></div>
+  </div>
+  <div class="loader-text">Kopi Rumahan</div>
+  <div class="loader-sub">Sebentar ya, kami sedang menyeduh...</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar"></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Menu utama">
+  <a class="nav-logo" href="#hero">☕ Kopi Rumahan</a>
+
+  <ul class="nav-links">
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#location">Lokasi</a></li>
+    <li><a href="#hours">Jam Buka</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="cart-btn" onclick="toggleCart()" aria-label="Buka keranjang belanja">
+      🛒 Keranjang
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Buka menu navigasi" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Dropdown Menu -->
+<div id="mobile-menu" role="navigation" aria-label="Menu mobile">
+  <a href="#about">Tentang Kami</a>
+  <a href="#menu">Menu</a>
+  <a href="#location">Lokasi</a>
+  <a href="#hours">Jam Buka</a>
+</div>
+
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section id="hero" aria-label="Header utama">
+  <div class="hero-bg-circles" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="hero-tag">✦ Est. 2006 · Cirebon ✦</span>
+    <h1 class="hero-title">
+      Tempat untuk<br><em>Bernapas</em><br>Sejenak
+    </h1>
+    <p class="hero-desc">
+      Kopi hangat, suasana tenang, dan sudut yang nyaman seperti rumah sendiri.
+      Semua ada di sini.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#menu">Lihat Menu</a>
+      <a class="btn-outline" href="#about">Kenali Kami</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">scroll</div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section id="about" aria-label="Tentang kami">
+  <div class="about-img-wrap reveal">
+    <div class="about-illus" aria-hidden="true">☕</div>
+    <div class="about-badge">
+      <strong>5 ⭐</strong>
+      <span>Rating Pelanggan</span>
+    </div>
+  </div>
+
+  <div class="about-text reveal">
+    <span class="section-tag">Kisah Kami</span>
+    <h2>Bukan sekadar kedai kopi.<br>Ini <em>rumah keduamu</em>.</h2>
+    <p>Kopi Rumahan lahir dari keinginan sederhana: menciptakan ruang di mana siapa pun bisa duduk, bernapas, dan merasakan kehangatan sejati.</p>
+    <p>Setiap cangkir kami seduh dengan penuh kasih — dari biji kopi pilihan petani lokal Jawa Barat, hingga pengolahan yang cermat oleh barista berpengalaman kami.</p>
+
+    <div class="about-features">
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">🌱</div>
+        <div>
+          <strong>Biji Lokal Pilihan</strong>
+          <span>Langsung dari petani Jawa Barat</span>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">🏡</div>
+        <div>
+          <strong>Suasana Homey</strong>
+          <span>Nyaman seperti di rumah sendiri</span>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">✨</div>
+        <div>
+          <strong>Resep Otentik</strong>
+          <span>Diwariskan turun-temurun</span>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">💳</div>
+        <div>
+          <strong>Bayar Mudah</strong>
+          <span>Tunai, QRIS, &amp; E-Money</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     MENU
+══════════════════════════════════ -->
+<section id="menu" aria-label="Menu makanan dan minuman">
+  <div class="section-header reveal">
+    <span class="section-tag">✦ Pilihan Terbaik</span>
+    <h2 class="section-title">Menu Kami</h2>
+    <p class="section-subtitle">Setiap sajian dibuat dengan sepenuh hati</p>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="menu-tabs reveal" role="tablist" aria-label="Filter kategori menu">
+    <button class="menu-tab active" onclick="filterMenu('all', this)"     role="tab" aria-selected="true">Semua</button>
+    <button class="menu-tab"        onclick="filterMenu('coffee', this)"  role="tab" aria-selected="false">☕ Kopi</button>
+    <button class="menu-tab"        onclick="filterMenu('noncoffee', this)" role="tab" aria-selected="false">🍵 Non-Kopi</button>
+    <button class="menu-tab"        onclick="filterMenu('food', this)"    role="tab" aria-selected="false">🍞 Makanan</button>
+    <button class="menu-tab"        onclick="filterMenu('nasi', this)"    role="tab" aria-selected="false">🍚 Nasi</button>
+    <button class="menu-tab"        onclick="filterMenu('ice-cream', this)" role="tab" aria-selected="false">🍦 Ice Cream</button>
+    <button class="menu-tab"        onclick="filterMenu('snack', this)"   role="tab" aria-selected="false">🍰 Snack</button>
+    <button class="menu-tab"        onclick="filterMenu('bingkisan', this)" role="tab" aria-selected="false">🎁 Bingkisan</button>
+    <button class="menu-tab"        onclick="filterMenu('herbal', this)"  role="tab" aria-selected="false">🍵 Herbal</button>
+  </div>
+
+  <!-- Cards injected by menu.js -->
+  <div class="menu-grid reveal" id="menu-grid" role="list" aria-label="Daftar menu"></div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     LOCATION
+══════════════════════════════════ -->
+<section id="location" aria-label="Lokasi kedai">
+  <div class="location-inner">
+
+    <div class="location-info reveal">
+      <span class="section-tag">📍 Temukan Kami</span>
+      <h2>Mampir ke<br>Kedai Kami</h2>
+
+      <div class="loc-detail">
+        <div class="loc-icon" aria-hidden="true">📍</div>
+        <div class="loc-text">
+          <strong>Alamat</strong>
+          <span>Pilangsari, Kedawung,<br>Cirebon, West Java 45153, Indonesia</span>
+        </div>
+      </div>
+
+      <div class="loc-detail">
+        <div class="loc-icon" aria-hidden="true">⏰</div>
+        <div class="loc-text">
+          <strong>Jam Operasional</strong>
+          <span>Senin–Jumat: 07.00 – 22.00 WIB<br>Sabtu: 07.00 – 23.00 WIB</span>
+        </div>
+      </div>
+
+      <div class="loc-detail">
+        <div class="loc-icon" aria-hidden="true">📞</div>
+        <div class="loc-text">
+          <strong>Hubungi Kami</strong>
+          <span>+62 881-0275-52114</span>
+        </div>
+      </div>
+
+      <div class="loc-detail">
+        <div class="loc-icon" aria-hidden="true">🅿️</div>
+        <div class="loc-text">
+          <strong>Parkir</strong>
+          <span>Tersedia gratis untuk motor &amp; mobil</span>
+        </div>
+      </div>
+
+      <a class="gmaps-btn"
+         href="https://maps.google.com/?q=Pilangsari+Kedawung+Cirebon+West+Java+45153"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Buka lokasi di Google Maps (tab baru)">
+        🗺️ Buka di Google Maps
+      </a>
+    </div>
+
+    <!-- Map embed / placeholder -->
+    <div class="map-embed reveal" aria-label="Peta lokasi">
+      <div class="map-placeholder">
+        <div class="map-pin" aria-hidden="true">📍</div>
+        <strong>Kopi Rumahan</strong>
+        <p>Pilangsari, Kedawung<br>Cirebon, West Java 45153, Indonesia</p>
+        <a class="gmaps-btn"
+           href="https://maps.google.com/?q=Pilangsari+Kedawung+Cirebon+West+Java+45153"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="margin-top:8px;">
+          🗺️ Lihat di Google Maps
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     HOURS
+══════════════════════════════════ -->
+<section id="hours" aria-label="Jam buka">
+  <h2 class="hours-title reveal">Jam Buka</h2>
+  <p class="hours-sub reveal">Kami selalu siap menyambut kamu</p>
+
+  <div class="hours-grid reveal">
+    <div class="hours-card">
+      <div class="hours-day">Senin – Jumat</div>
+      <div class="hours-time">07.00 – 22.00</div>
+    </div>
+    <div class="hours-card">
+      <div class="hours-day">Sabtu</div>
+      <div class="hours-time">07.00 – 23.00</div>
+    </div>
+    <div class="hours-card">
+      <div class="hours-day">Minggu</div>
+      <div class="hours-time">08.00 – 21.00</div>
+    </div>
+    <div class="hours-card">
+      <div class="hours-day">Hari Libur</div>
+      <div class="hours-time">08.00 – 22.00</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">☕ Kopi Rumahan</span>
+      <p>Secangkir kopi hangat dan tempat yang nyaman seperti rumah. Itu janji kami untuk kamu.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <a href="#about">Tentang Kami</a>
+      <a href="#menu">Menu</a>
+      <a href="#location">Lokasi</a>
+      <a href="#hours">Jam Buka</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <p>📞 +62 881-0275-52114</p>
+      <p>📧 rafi.ayyasy.ti.25@cic.ac.id</p>
+      <p>📍 Cirebon, Jawa Barat</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Kopi Rumahan. Dibuat dengan ❤️ di Cirebon.</p>
+    <div class="socials" aria-label="Media sosial">
+      <div class="social-link" title="Facebook"   role="button" tabindex="0">📘</div>
+      <div class="social-link" title="Instagram"  role="button" tabindex="0">📸</div>
+      <div class="social-link" title="Twitter/X"  role="button" tabindex="0">🐦</div>
+      <div class="social-link" title="TikTok"     role="button" tabindex="0">📹</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════
+     CART SIDEBAR
+══════════════════════════════════ -->
+<div id="cart-overlay" aria-hidden="true"></div>
+
+<aside id="cart-sidebar" aria-label="Keranjang belanja" aria-modal="true" role="dialog">
+  <div class="cart-header">
+    <h3>🛒 Keranjang Pesanan</h3>
+    <button class="cart-close" onclick="closeCartSidebar()" aria-label="Tutup keranjang">✕</button>
+  </div>
+
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🧺</div>
+      <strong>Keranjang masih kosong</strong>
+      <p>Yuk pilih menu favoritmu!</p>
+    </div>
+  </div>
+
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cart-total-price">Rp 0</span>
+    </div>
+    <button class="checkout-btn" onclick="openPayment()">Lanjut Pembayaran →</button>
+  </div>
+</aside>
+
+
+<!-- ══════════════════════════════════
+     PAYMENT MODAL
+══════════════════════════════════ -->
+<div id="payment-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Pilih metode pembayaran">
+  <div class="modal-box">
+    <h2 class="modal-title">💳 Pilih Pembayaran</h2>
+
+    <!-- Method selector -->
+    <div class="pay-options" role="radiogroup" aria-label="Metode pembayaran">
+      <div class="pay-option" onclick="selectPayment('qris', this)" role="radio" tabindex="0" aria-label="QRIS">
+        <span class="pay-icon">📷</span>
+        <div class="pay-label">QRIS</div>
+      </div>
+      <div class="pay-option" onclick="selectPayment('emoney', this)" role="radio" tabindex="0" aria-label="E-Money">
+        <span class="pay-icon">📱</span>
+        <div class="pay-label">E-Money</div>
+      </div>
+      <div class="pay-option" onclick="selectPayment('cash', this)" role="radio" tabindex="0" aria-label="Tunai">
+        <span class="pay-icon">💵</span>
+        <div class="pay-label">Tunai</div>
+      </div>
+    </div>
+
+    <!-- QRIS Detail -->
+    <div class="pay-detail" id="pay-detail-qris">
+      <div class="qris-box" aria-label="QR Code pembayaran">
+        <div class="qr-pattern" aria-hidden="true">▓▓▓<br>▓ ▓<br>▓▓▓</div>
+        <span class="qris-label">SCAN QRIS</span>
+      </div>
+      <h4>Scan QRIS</h4>
+      <p>Gunakan aplikasi dompet digital atau mobile banking apapun yang mendukung QRIS. Berlaku untuk semua provider.</p>
+    </div>
+
+    <!-- E-Money Detail -->
+    <div class="pay-detail" id="pay-detail-emoney">
+      <h4>Pilih E-Money</h4>
+      <div class="emoney-list">
+        <div class="emoney-item">💚 GoPay</div>
+        <div class="emoney-item">🔵 OVO</div>
+        <div class="emoney-item">🔴 Dana</div>
+        <div class="emoney-item">🟡 ShopeePay</div>
+        <div class="emoney-item">🟠 LinkAja</div>
+        <div class="emoney-item">🔵 BCA Mobile</div>
+      </div>
+      <div class="transfer-info">
+        Transfer ke: <strong>0812-3456-7890</strong><br>
+        a.n. <strong>Kopi Rumahan</strong>
+      </div>
+    </div>
+
+    <!-- Cash Detail -->
+    <div class="pay-detail" id="pay-detail-cash">
+      <div style="font-size:56px; margin-bottom:14px;" aria-hidden="true">💵</div>
+      <h4>Pembayaran Tunai</h4>
+      <p>Bayar langsung di kasir saat mengambil pesanan. Pastikan kamu sudah memiliki uang pas ya!</p>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="modal-order-summary">
+      <h4>📋 Ringkasan Pesanan</h4>
+      <div id="modal-items"></div>
+      <div class="summary-total">
+        <span>Total Pembayaran</span>
+        <span id="modal-total">Rp 0</span>
+      </div>
+    </div>
+
+    <button class="confirm-btn" onclick="confirmOrder()">✅ Konfirmasi Pesanan</button>
+    <button class="cancel-btn" onclick="closePayment()">← Kembali ke Keranjang</button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     SUCCESS MODAL
+══════════════════════════════════ -->
+<div id="success-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Pesanan berhasil">
+  <div class="success-box">
+    <span class="success-icon" aria-hidden="true">🎉</span>
+    <h3>Pesanan Berhasil!</h3>
+    <p>Terima kasih sudah memesan di Kopi Rumahan. Kami sedang mempersiapkan pesananmu dengan penuh kasih sayang. ☕</p>
+    <button class="btn-primary" onclick="closeSuccess()" style="width:100%; text-align:center; display:block;">
+      Kembali Berbelanja
+    </button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     CHAT BUBBLE
+══════════════════════════════════ -->
+<div id="chat-bubble" aria-label="Chat dengan kami">
+  <button class="chat-toggle" onclick="toggleChat()" aria-label="Buka live chat" aria-expanded="false">
+    💬
+  </button>
+  <div class="chat-notif" id="chat-notif" aria-label="1 pesan baru">1</div>
+
+  <div id="chat-window" role="dialog" aria-modal="true" aria-label="Chat Kopi Rumahan">
+    <div class="chat-top">
+      <div class="chat-avatar" aria-hidden="true">☕</div>
+      <div class="chat-top-info">
+        <strong>Kopi Rumahan</strong>
+        <span><span class="online-dot" aria-hidden="true"></span>Online sekarang</span>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()" aria-label="Tutup chat">✕</button>
+    </div>
+
+    <div class="chat-msgs" id="chat-msgs" aria-live="polite" aria-label="Percakapan"></div>
+
+    <div class="chat-input-row">
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Tanya soal menu, stok, jam buka..."
+        aria-label="Tulis pesan"
+        autocomplete="off"
+        maxlength="300"
+      >
+      <button class="send-btn" onclick="sendMsg()" aria-label="Kirim pesan">➤</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     TOAST NOTIFICATION
+══════════════════════════════════ -->
+<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+
+<!-- ══════════════════════════════════
+     JAVASCRIPT — load order matters
+══════════════════════════════════ -->
+<script src="js/data.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/payment.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
